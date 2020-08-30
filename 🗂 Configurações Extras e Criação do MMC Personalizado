@@ -1,0 +1,22 @@
+🗂 Configurações Extras e Criação do MMC Personalizado
+
+-DNS
+    -Zona de Pesquisa Inversa
+        -Nova zona
+            -Zona primária
+            -Novo ponteiro (PTR)
+                -Ip do server
+                -Nome do host
+                    -Procurar
+                        -Zona de pesquisa direta
+                            -Zona do domínio
+                                -Hostname do server
+-Serviços e Sites do Active Directory
+    -Sites
+        -Subnets
+            -Nova Sub-rede
+                
+-MMC
+    -Adicionar ou Remover Snap-ins
+        -Adicionar os aplicativos 
+    -Salvar
