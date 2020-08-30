@@ -1,0 +1,34 @@
+🗂 Configurando o Endereçamento IP
+
+sudo ifdown enp0s3
+
+sudo vim /etc/network/interfaces
+
+auto enp0s3
+iface enp0s3 inet static
+address 
+netmask 
+network 
+broadcast 
+gateway 
+dns-nameservers 
+dns-search (nome do domínio)
+dns-domain (nome do domínio)
+
+-Siga as configurações de rede comforme o seu ambiente
+
+sudo ifup enp0s3
+
+—INDICADO COLOCAR O NOME FQDN (Fully Qualified Domain Name)
+    sudo vim /etc/hostname
+    sudo vim /etc/hosts
+
+ping localhost
+
+ping 192.168.1.10
+
+ping ptispo01dc01
+
+ping www.google.com
+
+sudo apt-get update

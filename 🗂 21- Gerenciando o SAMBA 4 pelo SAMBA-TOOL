@@ -1,0 +1,44 @@
+🗂 Gerenciando o SAMBA 4 pelo SAMBA-TOOL
+
+-Criando usuários com samba-tool
+    sudo samba-tool user add jose.assis
+    sudo samba-tool user list
+
+-Criando grupos com o samba-tool
+    sudo samba-tool group add G-Compras
+    sudo samba-tool group list
+
+-Adicionando usuários ou grupo com samba-tool
+    sudo samba-tool group addmembers G-Compras jose.assis
+    sudo samba-tool group listmembers G-Compras
+
+-Listando informações de SPN
+    sudo samba-tool spn list jose.assis
+    sudo samba-tool spn list G-Compras
+
+-Criando usuários com samba-tool com opções
+    sudo samba-tool user add rogerio.sampaio
+    sudo samba-tool group add G-Diretoria --description=”Grupo da diretoria”
+    sudo samba-tool group addmembers G-Diretoria rogerio.sampaio
+    sudo samba-tool group listmembers G-Diretoria
+    sudo samba-tool spn list rogerio.sampaio
+
+-Criando usuários e grupos com samba-tool com opções avançadas
+    sudo sabam-tool ?
+    sudo samba-tool user add --help
+    sudo samba-tool group add --help
+    sudo samba-tool user add jefferson.costa --surname=”Jefferson” --given-name=”Costa” --use-username-as-cn --userou=OU=Usuarios,OU=Vendas,OU=pti.intra
+
+    sudo samba-tool group add G-Vendas --group-scope=Global --groupou=OU=Grupos,OU=Vendas,OU=pti.intra
+
+    sudo samba-tool group add DL-PastaVendas --group-scope=Domain --groupou=OU=Grupos,OU=Vendas,OU=pti.intra
+
+    sudo samba-tool group list
+    sudo samba-tool group addmembers G-Vendas jefferson.costa
+    sudo samba-tool group addmembers DL-PastaVendas G-Vendas
+
+-Mais informações sobre o samba-tool
+    sudo man samba-tool
+    sudo samba-tool user ?
+    sudo samba-tool user add --help
+Opções de ? e --help do comando

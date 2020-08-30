@@ -1,0 +1,32 @@
+Particionamento com RAID1 no Ubuntu 16.04.7
+
+-Manual
+    -Ativar os discos
+    -Configurar RAID via software
+        -Sim
+            -Criar dispositivo MD
+                -RAID1
+                    -Marcar os disco para o RAID1
+            -Finalizar
+    -Configurar o Gerenciador de Volumes Lógicos
+        -Sim
+        -Criar grupo de volumes
+            -Selecionar dispositivo
+                -Sim
+        -Criar volume lógico
+            -swap
+                -1024MB
+            -raiz
+                -Total do disco
+        -Finalizar
+    -Volume swap
+        -Usar como
+            -Área de troca (swap)
+        -Finalizar a configuração da partição
+    -Volume raiz
+        -Usar como
+            -Sistema de arquivos com "journaling" etx4
+        -Ponto de montagem
+            -/ - o sistema de arquivos raiz
+        -Finalizar a configuração da partição
+    -Finalizar o particionamento e escrever as mudanças no disco

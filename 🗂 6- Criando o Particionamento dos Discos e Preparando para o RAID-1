@@ -1,0 +1,37 @@
+🗂 Criando o Particionamento dos Discos e Preparando para o RAID-1
+
+sudo fdisk /dev/sdc
+
+n
+
+p
+
+1
+
+2048
+
+20971519
+
+t
+
+fd
+
+w
+
+sudo fdisk /dev/sdd
+
+n
+
+p
+
+1
+
+2048
+
+20971519
+
+t
+
+fd
+
+w

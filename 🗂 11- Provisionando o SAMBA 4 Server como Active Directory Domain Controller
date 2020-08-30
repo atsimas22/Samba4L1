@@ -1,0 +1,39 @@
+🗂 Provisionando o SAMBA 4 Server como Active Directory Domain Controller
+
+sudo service samba stop
+
+sudo service samba status
+
+sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.bkp
+
+sudo samba-tool domain provision --use-rfc2307 --use-xattrs=yes --interactive
+
+-Informações do REALM, DOMAIN, SERVER ROLE e DNS
+    Realm:	nome do domínio
+    Domain:	
+    Server Role:	dc
+    DNS Backend:	SAMBA_INTERNAL
+    DNS Forwarder:	gateway
+    Senha:	Senha Forte
+
+sudo mv /etc/krb5.conf /etc/krb5.conf.bkp
+
+sudo cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
+
+-Verificar linha default_realm =
+    sudo vim /etc/krb5.conf
+ 
+
+sudo samba-tool domain level show
+
+-Alterando o nível funcional do domínio e da floresta caso não esteja no nível 2008_R2
+    sudo samba-tool domain level raise –domain-level 2008_R2 –forest-level 2008_R2
+
+sudo reboot
+
+sudo service samba status
+
+sudo service samba-ad-dc status
+
+sudo netstat -tulpen | more
+

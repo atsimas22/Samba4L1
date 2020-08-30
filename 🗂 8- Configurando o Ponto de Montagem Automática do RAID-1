@@ -1,0 +1,35 @@
+🗂 Configurando o Ponto de Montagem Automática do RAID-1
+
+sudo apt-get update
+
+sudo apt-get install acl attr
+
+sudo -i
+
+sudo blkid /dev/md1
+
+sudo blkid /dev/md1 | cut -d' ' -f2
+
+sudo blkid /dev/md1 | cut -d' ' -f2 >> /etc/fstab
+
+sudo cat /etc/fstab
+
+exit
+
+sudo vim /etc/fstab	
+
+-SEM ASPAS NO UUID
+    UUID=	/arquivos	ext4	user_xattr,acl,barrier=1,errors=remount-ro 0 1
+
+ESC
+Shift : x
+
+sudo reboot
+
+tune2fs -l /dev/md1 | grep "Default mount options:"
+
+sudo mount | grep /arquivos
+
+sudo blkid /dev/md1
+
+

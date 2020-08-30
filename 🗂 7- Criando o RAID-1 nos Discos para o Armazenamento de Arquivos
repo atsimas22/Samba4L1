@@ -1,0 +1,48 @@
+🗂 Criando o RAID-1 nos Discos para o Armazenamento de Arquivos
+
+sudo mdadm -C -v /dev/md1 -l 1 -n 2 /dev/sdc1 /dev/sdd1
+
+y
+
+sudo mkfs.ext4 /dev/md1
+
+sudo mdadm -D --scan | grep md1 >> /etc/mdadm/mdadm.conf
+
+sudo vim /etc/mdadm/mdadm.conf
+
+-Subir a linha inserida anteriormente 
+-Alterar para o padrão correto
+-Utilizar as opções de recortar e colocar o VIM
+    modo visual: v ou utilizar o dd <
+
+-selecionar o texto
+    recortar: d
+    selecionar o local para colar
+    colar: p
+
+-Sair e salvar do editor VIM
+    ESC
+    Shift : x
+
+sudo update-initramfs -u
+
+sudo reboot
+
+sudo mkdir /arquivos
+
+sudo mount /dev/md1 /arquivos
+
+sudo mount -l | grep /arquivos
+
+sudo cd /arquivos
+
+sudo mkdir teste{1..9}
+
+sudo ls -lha
+
+sudo cd /
+
+sudo umount /arquivos
+
+sudo mount -l | grep /arquivos
+

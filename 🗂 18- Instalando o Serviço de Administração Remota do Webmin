@@ -1,0 +1,32 @@
+🗂 Instalando o Serviço de Administração Remota do Webmin
+
+-Atualizando as listas do apt-get e atualizando o sistema
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get clean
+
+-Instalando as dependências do Webmin
+    sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+
+-Fazendo o download do Webmin do site Sourceforge
+    wget http://prdownloads.sourceforge.net/webadmin/webmin_1.791_all.deb
+
+-Instalando o Webmin
+    sudo dpkg -i webmin_1.791_all.deb
+
+-Setando uma senha para o usuário root
+    sudo password root
+
+-Testando o acesso ao usuário root
+    su
+
+-Localizando o diretório de instalação do Webmin
+    cd /etc/webmin
+    ls -lha
+
+-Testando comunicação com o Webmin via Navegador
+    ping (ip do servidor)
+
+-Acessando o Webmin – Firefox <-- recomendado
+    https//(ip do servidor):10000
+    usuário: root | senha do root

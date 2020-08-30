@@ -1,0 +1,23 @@
+🗂 Permissões de Diretórios e Arquivos utilizando ACL e ATTR
+
+-Testando as ACL’s
+    sudo cd /arquivos/
+    sudo touch testing_acl.txt
+    sudo setfacl -m user:jose.assis:rwx -d testing_acl.txt
+    sudo setfacl -m group:DL-PastaVendas:rwx -d testing_acl.txt
+    sudo getfacl -p testing_acl.txt
+
+    sudo setfacl -R -m group:"PTI\Domain Admins":rwx /share
+    sudo setfacl -R -m group:"PTI\Domain Users":rwx /share/common
+    sudo getfacl -p testing_acl.txt
+
+    sudo setfattr -n user.jose.assis -v teste1 testing_acl.txt
+    sudo getfattr testing_acl.txt
+
+-Criando o diretório Público
+    sudo mkdir -p /arquivos/pti.intra/Publica
+    sudo chmod 2777 /arquivos/pti.intra/Publica
+    sudo getent group "PTI\Domain Users"
+    sudo chgrp "PTI\Domain Users" /arquivos/pti.intra/Publica
+    sudo setfacl -R -b /arquivos/pti.intra/Pubica
+    sudo setfacl -R -m default:group:"PTI\Domain Users":rwx pti.intra/Publica

@@ -1,0 +1,22 @@
+🗂 Instalando o Serviço de Administração Remota do Webmin via script
+
+chmod +x webmin.sh
+
+./webmin.sh
+
+-Setando uma senha para o usuário root
+    sudo password root
+
+-Testando o acesso ao usuário root
+    su
+
+-Localizando o diretório de instalação do Webmin
+    cd /etc/webmin
+    ls -lha
+
+-Testando comunicação com o Webmin via Navegador
+    ping (ip do servidor)
+
+-Acessando o Webmin – Firefox <-- recomendado
+    https//(ip do servidor):10000
+    usuário: root | senha do root

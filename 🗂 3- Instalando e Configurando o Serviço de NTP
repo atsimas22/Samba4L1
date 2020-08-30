@@ -1,0 +1,36 @@
+🗂 Instalando e Configurando o Serviço de NTP
+
+sudo apt-get install ntp
+
+cd /etc/
+
+sudo vim ntp.conf
+
+-Descomentar
+    statsdir /var/log/ntpstats
+-Comentar as linhas 
+    server 0.ubuntu.pool.ntp.org
+    server 1.ubuntu.pool.ntp.org
+    server 2.ubuntu.pool.ntp.org
+    server 3.ubuntu.pool.ntp.org
+    server ntp.ubuntu.com
+-Inserir as linhas
+    server a.st1.ntp.br iburst
+    server b.st1.ntp.br iburst
+    server c.st1.ntp.br iburst
+    server d.st1.ntp.br iburst
+    server a.ntp.br iburst
+    server b.ntp.br iburst
+    server c.ntp.br iburst
+    disable monitor
+
+sudo service ntp stop
+sudo service ntp start
+
+-Para verificar se está funcionando o serviço NTP
+    sudo ntpq -p
+
+-Apontar o servidor NTP (No servidor e nos clientes)
+    sudo ntpdate 'ip do servidor'
+
+

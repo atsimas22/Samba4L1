@@ -1,0 +1,14 @@
+🗂 Testando o Serviço de DHCP Server em Clientes GNU/Linux
+
+-Comandos utilizados no GNU/Linux Ubuntu Desktop e Liux Mint
+    sudo ifconfig
+    sudo router -n
+    sudo cat /etc/resolv.conf
+    ping (nome do domínio)
+    nslookup (nome do domínio)
+
+-Verificação do Lease no servidor
+    sudo cat /var/lib/dhcp/dhcpd.lease
+
+-Verificação do Lease no cliente
+    sudo cat /var/lib/dhcp/dhclient.lease

@@ -1,0 +1,5 @@
+🗂 Instalação das Dependências dos Serviços de Rede
+
+chmod +x dependencias.sh
+
+./dependencias.sh

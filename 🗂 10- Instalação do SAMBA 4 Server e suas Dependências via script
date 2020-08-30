@@ -1,0 +1,5 @@
+🗂 Instalação do SAMBA 4 Server e suas Dependências via script
+
+chmod +x samba4.sh
+
+./samba4.sh

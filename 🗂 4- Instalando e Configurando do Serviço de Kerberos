@@ -1,0 +1,7 @@
+🗂 Instalando e Configurando do Serviço de Kerberos
+
+sudo apt-get install krb5-user krb5-config
+
+
+
+

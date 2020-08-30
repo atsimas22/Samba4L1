@@ -1,0 +1,5 @@
+Atualizando o GNU/Linux Ubuntu Server
+
+sudo apt-get update
+
+sudo apt-get upgrade

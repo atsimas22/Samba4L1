@@ -1,0 +1,48 @@
+🗂 Configuração do Serviço de DHCP Server
+
+sudo service isc-dhcp-server status
+
+sudo cp /etc/dhcp/dhcp.conf /etc/dhcp/dhcp.conf.bkp
+
+sudo vim /etc/dhcp/dhcp.conf
+
+-Alterar a linha
+    ddns-updates-style none; -> ddns-updates-style interim;
+    option domain-name "example.org"; -> option domain-name "nome do domínio";
+    option domain-name-servers ns1.example.org, ns2.example.org; -> option domain-name-servers (ip do server);
+
+-Inserir a linha
+    ddns-updates on;
+    option ntp-servers (nome do servidor);
+
+-Descomentar a linha
+    #authoritative
+
+-Escopo DHCP
+    subnet (endereço da rede) netmask (máscara da rede) {
+    range (intervalo de distribuição de ip's);
+    option domain-name ("nome do domínio");
+    option domain-name-servers (ip do server) 8.8.8.8 8.8.4.4;
+    option netbios-name-servers (ip do server);
+    option netbios-dd-server (ip do server);
+    option netbios-node-type 8;
+    option subnet-mask 255.255.255.0;
+    option routers (ip do gateway);
+    option broadcast-address 192.168.1.255;
+    option ntp-servers (ip do server)
+    default-lease-time 600;
+    max-lease-time 7200;
+    allow unknown-clients;
+    }
+
+sudo dhcpd -cf /etc/dhcp/dhcpd.conf
+
+sudo service isc-dhcp-server stop
+
+sudo service isc-dhcp-server start
+
+sudo service isc-dhcp-server status
+
+sudo netstart -tupenl | grep -i 67
+
+sudo cat /var/lib/dhcp/dhcpd.lease

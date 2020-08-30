@@ -1,0 +1,22 @@
+🗂 Acessando e montando o compartilhamento de Pasta
+
+-Verificando os compartilhamentos
+    sudo smbclient -L localhost -U%
+    sudo smbclient //localhost/Publica -U ‘administrator’
+    ls
+    mkdir
+    ls
+    quit
+    sudo getfacl -p /arquivos/*
+
+-Acessando e montando os compartilhamento no Microsoft Windows
+    \\ptispo01dc01
+    net use \\ptispo01dc01\Publica /persistent:yes
+    net use
+    net use P: /delete
+
+-Acessando e montando os compartilhamento no GNU/Linux
+    Ctrl + L
+    smb://ptispo01dc01
+    sudo smbclient -L //ptispo01dc01 -U%
+    sudo smbclient //ptispo01dc01/Publica -U 'administrator'

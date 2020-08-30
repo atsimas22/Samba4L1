@@ -1,0 +1,78 @@
+🗂 Ingressando Máquinas Linux Mint Desktop no Domínio
+
+-Verificando o NTP no servidor
+    sudo service ntp stop
+    sudo ntpdate -s a.ntp.br
+    sudo service ntp start
+    date
+
+-Atualizando o sistema
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get dist-upgrade
+    sudo reboot
+
+-Verificação de Data/Hora
+    sudo date
+
+-Atualização da Data/Hora via servidor NTP pti.intra
+    sudo ntpdate -s (nome FQDN do server)
+
+-Atualização via Gerenciador de Data/Hora do GNU/Linux Mint
+-Testando a conexão com o servidor
+    sudo ping (nome do domínio)
+    sudo nslookup (nome do domínio)
+    sudo hostname
+    sudo ifconfig
+
+-Download do Centrify para GNU/Linux Mint
+    https://www.centrify.com/express/linux-unix/download-files/#accordion-download-express-02
+
+-Descompactando a Pasta do Centrify-Suite
+    cd Download
+    sudo tar -zxvf centrify-suite-2016-deb6-x86_64.tgz
+
+-Acessando a pasta do Centrify-Suite
+    cd centrify-suite-2016-deb6-x86_64/
+
+-Instalando o Centrify-Suite
+    sudo ./install-express.sh
+
+-Opções de instalação:
+    Digite “X” Centrify Suite Express Edition e pressione Enter.
+    Será solicitado se você aceita a licença e pressione Enter
+    Será questionado se você deseja executar o adcheck para verificar seu ambiente de AD. Aconselho que marque “Y”.
+    Após aceitar, será solicitado que insira seu domínio para ser realizada a verificação do ambiente.
+    A próxima mensagem, pergunta se gostaria de ingressar no AD.
+    Será solicitado que entre com o domínio que deseja ingressar, como pode ser visualizado, o domínio que foi escrito anteriormente para teste de ambiente já está como padrão.
+    Na próxima mensagem, será solicitado um usuário administrador para inserir ao domínio e em seguida, sua senha.
+    Será solicitado o nome da máquina (host).
+    Será solicitado o “container” (O.U. – Unidade Organizacional) que ficará organizando os microcomputadores no servidor.
+    Inserir nome de controlador de domínio ou deixar para detecção automática.
+    Esta mensagem perguntará se gostaria de reiniciar o computador depois da instalação, insira N, para não reiniciar.
+    Verificar se as informações estão corretas, confirmar com Y para seguir a instalação.
+    Será realizada a instalação final e se atente pela mensagem “install-express.sh completed sucessfully”. Neste caso, está tudo OK.
+
+-Desabilitar a licença 
+    sudo adlicense --express
+    sudo adjoin --workstation (nome dodomínio)
+    sudo adinfo
+
+-Verificando informações de usuários
+    id
+    smbclient -L //(hostname do server) -U%
+
+-Localização do arquivo de configuração do Centrify
+    /etc/centrifydc/centrifydc.conf
+
+-Solução PowerBroker Open Project
+    https://www.powerbrokeropen.org/
+
+-Download alternativo caso o e-mail não seja recebido:
+    http://download1.beyondtrust.com/Technical-Support/Downloads/PowerBroker-Identity-Services-Open-Edition/?Pass=True
+
+-Solução Centrify Express
+    https://www.centrify.com/express/
+
+-Download alternativo caso o e-mail não seja recebido:
+    https://www.centrify.com/express/linux-unix/download-files/#accordion-download-express-02

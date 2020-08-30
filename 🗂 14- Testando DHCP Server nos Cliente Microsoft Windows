@@ -1,0 +1,13 @@
+🗂 Testando DHCP Server nos Cliente Microsoft Windows
+
+-Comandos utilizados no Microsoft Windows XP, 7, 8, 8.1 e 10 para verificação da conectividade de rede
+    ipconfig
+    ipconfig /all
+    ipconfig /release
+    ipconfig /renew
+    ipconfig /displaydns
+    ipconfig /flushdns
+    ping (nome do domínio)
+    nslookup (nome do domínio)
+    net time \\(nome do server) /set /yes
+    Executar \\(nome do domínio)
