@@ -2,6 +2,8 @@
 
 sudo apt-get install krb5-user krb5-config
 
-
-
-
+-Configuração do krb5-config padrão
+-Obs: o nome Realm deve ser em MAIÚSCULA
+    Realm=PTI.INTRA
+    Server=ptispo01dc01.pti.intra
+    Hostname=ptispo01dc01.pti.intra
